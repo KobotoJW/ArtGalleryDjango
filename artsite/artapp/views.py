@@ -8,6 +8,7 @@ from .models import Post
 def index(request):
     posts = []
     posts = Post.objects.all()
+    posts = posts.order_by('-date_posted')
     template = loader.get_template('artsite/index.html')
     context = {
         'posts': posts,
