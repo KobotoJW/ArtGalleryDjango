@@ -1,0 +1,174 @@
+/* TOP NAVIGATION BAR */
+.top-nav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #333;
+    overflow: hidden;
+    padding: 0;
+    align-items: center;
+    z-index: 10;
+}
+
+.top-nav a {
+    float: right;
+    color: wheat;
+    text-align: center;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 4px;
+}
+
+.top-nav a:hover {
+    background-color: rgb(0, 10, 52);
+    color: white;
+}
+
+.button-admin {
+    background-color: rgb(0, 20, 100);
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    margin: 4px 5px;
+    cursor: pointer;
+}
+
+.title {
+    font-family: cursive;
+    font-size: 50px;
+    color: violet;
+    text-align: center;
+    margin: 10px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(0, 10, 52);
+    margin: 0;
+    padding: 0;
+}
+
+.posts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding: 20px;
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(0, 20, 100);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 8px 8px 8px rgb(0, 30, 148);
+    width: 60%;
+}
+
+h2 {
+    color: wheat;
+}
+
+.post p {
+    color: wheat;
+}
+
+.post-content {
+    position: relative;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    transition: max-height 0.5s ease;
+}
+
+.post-content::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px; /* Height of the fade effect */
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(0, 20, 100, 1)); /* Adjust the color to match your background */
+    pointer-events: none; /* Ensures clicks go through this overlay */
+}
+
+.post-content.expanded::after {
+    display: none; /* Hide the overlay when content is expanded */
+}
+
+.post-content p {
+    align-self: center;
+    text-align: justify;
+    color: wheat;
+}
+
+.post-photos {
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+}
+
+.post-photos img {
+    display: none;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 70%;
+}
+
+.post-photos img:first-of-type {
+    display: block;
+}
+
+.prev {
+    cursor: pointer;
+    background-color: #333;
+    color: wheat;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.prev:hover {
+    background-color: #555;
+}
+
+.next {
+    cursor: pointer;
+    background-color: #333;
+    color: wheat;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.next:hover {
+    background-color: #555;
+}
+
+.read-more {
+    color: wheat;
+    cursor: pointer;
+    background-color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.read-more:hover {
+    background-color: #555;
+}

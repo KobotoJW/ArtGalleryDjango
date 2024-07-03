@@ -4,11 +4,9 @@ from django.template import loader
 
 from .models import Post
 
-
 def index(request):
-    posts = []
-    posts = Post.objects.all()
-    posts = posts.order_by('-date_posted')
+    # Prefetch the photos for each post to minimize database queries
+    posts = Post.objects.prefetch_related('photos').order_by('-date_posted')
     template = loader.get_template('artsite/index.html')
     context = {
         'posts': posts,

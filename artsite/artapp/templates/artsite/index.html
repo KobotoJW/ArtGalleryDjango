@@ -3,7 +3,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/index_style.css' %}">
+    <script src="{% static 'scripts/index_script.js' %}"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Posts</title>
@@ -21,8 +22,21 @@
                 <div class="post">
                     <h2>{{ post.title }}</h2>
                     <p>{{ post.date_posted }}</p>
-                    <p>{{ post.content|linebreaks }}</p>
-                    <img src="{{ post.photo.url }}" alt="image" style="width: 50%; align-self: center;">
+                    
+                    <div class="post-content" id="content-{{ forloop.counter }}">
+                        <p>{{ post.content|linebreaks }}</p>
+                    </div>
+                    <a onclick="toggleContent('content-{{ forloop.counter }}')" class="read-more">Read More</a>
+                    
+                    <div class="post-photos">
+                        {% for photo in post.photos.all %}
+                            <img src="{{ photo.image.url }}" alt="Photo for post: {{ post.title }}">
+                        {% endfor %}
+                        <div>
+                            <button class="prev">Prev</button>
+                            <button class="next">Next</button>
+                        </div>
+                    </div>
                 </div>
             {% endfor %}
         </div>
