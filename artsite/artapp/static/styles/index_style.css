@@ -19,6 +19,10 @@
     height: auto;
 }
 
+.top-nav p {
+    width: 66px;
+}
+
 .top-nav a {
     float: right;
     color: #1b065e;
