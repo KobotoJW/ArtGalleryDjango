@@ -14,6 +14,11 @@
     z-index: 10;
 }
 
+.logo-img {
+    width: 15%;
+    height: auto;
+}
+
 .top-nav a {
     float: right;
     color: #1b065e;
@@ -38,9 +43,6 @@
 }
 
 .title {
-    font-family: cursive;
-    font-size: 50px;
-    color: #ff47da;
     text-align: center;
     margin: 10px;
 }
