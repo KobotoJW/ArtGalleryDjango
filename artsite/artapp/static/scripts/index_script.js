@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             if (!content.nextElementSibling || !content.nextElementSibling.classList.contains('read-more')) {
                 var readMoreBtn = document.createElement("button");
-                readMoreBtn.innerHTML = "Read More";
+                readMoreBtn.innerHTML = "↓ Read More ↓";
                 readMoreBtn.classList.add('read-more');
                 readMoreBtn.onclick = function() { toggleContent(content.id); };
                 content.parentNode.insertBefore(readMoreBtn, content.nextSibling);
@@ -23,11 +23,11 @@ function toggleContent(contentId) {
     if (content.classList.contains('expanded')) {
         content.style.maxHeight = "100px";
         content.classList.remove('expanded');
-        readMoreBtn.innerHTML = "Read More";
+        readMoreBtn.innerHTML = "↓ Read More ↓";
     } else {
         content.style.maxHeight = content.scrollHeight + "px";
         content.classList.add('expanded');
-        readMoreBtn.innerHTML = "Show Less";
+        readMoreBtn.innerHTML = "↑ Show Less ↑";
     }
 }
 

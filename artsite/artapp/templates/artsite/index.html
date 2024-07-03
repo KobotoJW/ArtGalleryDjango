@@ -26,7 +26,7 @@
                     <div class="post-content" id="content-{{ forloop.counter }}">
                         <p>{{ post.content|linebreaks }}</p>
                     </div>
-                    <a onclick="toggleContent('content-{{ forloop.counter }}')" class="read-more">Read More</a>
+                    <a onclick="toggleContent('content-{{ forloop.counter }}')" class="read-more">↓ Read More ↓</a>
                     
                     <div class="post-photos">
                         {% for photo in post.photos.all %}

@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #333;
+    background-color: #1b065e;
     overflow: hidden;
     padding: 0;
     align-items: center;
@@ -16,7 +16,7 @@
 
 .top-nav a {
     float: right;
-    color: wheat;
+    color: #1b065e;
     text-align: center;
     padding: 12px;
     font-size: 18px;
@@ -24,14 +24,14 @@
 }
 
 .top-nav a:hover {
-    background-color: rgb(0, 10, 52);
-    color: white;
+    background-color: #f5eccd;
+    color: #1b065e;
 }
 
 .button-admin {
-    background-color: rgb(0, 20, 100);
+    background-color: #fcc8c2;
     text-decoration: none;
-    color: white;
+    color: #1b065e;
     text-align: center;
     margin: 4px 5px;
     cursor: pointer;
@@ -40,14 +40,14 @@
 .title {
     font-family: cursive;
     font-size: 50px;
-    color: violet;
+    color: #ff47da;
     text-align: center;
     margin: 10px;
 }
 
 body {
     font-family: Arial, sans-serif;
-    background-color: rgb(0, 10, 52);
+    background-color: #ff87ab;
     margin: 0;
     padding: 0;
 }
@@ -64,19 +64,19 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(0, 20, 100);
+    background-color: #fcc8c2;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 8px 8px 8px rgb(0, 30, 148);
+    box-shadow: 8px 8px 8px #ff47da;
     width: 60%;
 }
 
 h2 {
-    color: wheat;
+    color: #1b065e;
 }
 
 .post p {
-    color: wheat;
+    color: #1b065e;
 }
 
 .post-content {
@@ -95,7 +95,7 @@ h2 {
     left: 0;
     right: 0;
     height: 50px; /* Height of the fade effect */
-    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(0, 20, 100, 1)); /* Adjust the color to match your background */
+    background: linear-gradient(to bottom, rgba(255,255,255,0), #fcc8c2); /* Adjust the color to match your background */
     pointer-events: none; /* Ensures clicks go through this overlay */
 }
 
@@ -106,7 +106,7 @@ h2 {
 .post-content p {
     align-self: center;
     text-align: justify;
-    color: wheat;
+    color: #1b065e;
 }
 
 .post-photos {
@@ -129,8 +129,8 @@ h2 {
 
 .prev {
     cursor: pointer;
-    background-color: #333;
-    color: wheat;
+    background-color: #fcc8c2;
+    color: #1b065e;
     border: none;
     padding: 10px;
     margin: 5px;
@@ -140,13 +140,13 @@ h2 {
 }
 
 .prev:hover {
-    background-color: #555;
+    background-color: #f5eccd;
 }
 
 .next {
     cursor: pointer;
-    background-color: #333;
-    color: wheat;
+    background-color: #fcc8c2;
+    color: #1b065e;
     border: none;
     padding: 10px;
     margin: 5px;
@@ -156,13 +156,14 @@ h2 {
 }
 
 .next:hover {
-    background-color: #555;
+    background-color: #f5eccd;
 }
 
 .read-more {
-    color: wheat;
+    margin: 5px;
+    color: #1b065e;
     cursor: pointer;
-    background-color: #333;
+    background-color: #fcc8c2;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -170,5 +171,5 @@ h2 {
 }
 
 .read-more:hover {
-    background-color: #555;
+    background-color: #f5eccd;
 }
