@@ -11,9 +11,16 @@
 </head>
 <body>
     <nav class="top-nav">
-        <p></p>
-        <img class="logo-img" src="../media/site_photos/Stronka-Roksi-7-3-2024.png" alt="Stronka Roksi">
-        <a href="/admin" class="button-admin">Admin</a>
+        <form action="{% url 'index' %}" method="get" class="search-bar">
+            <input type="text" name="search" placeholder="Search posts...">
+            <button type="submit">Search</button>
+        </form>
+        <div class="logo-container">
+            <img class="logo-img" src="../media/site_photos/Stronka-Roksi-7-3-2024.png" alt="Stronka Roksi">
+        </div>
+            <div class="nav-links">
+            <a href="/admin" class="button-admin">Admin</a>
+        </div>
     </nav>
 
     {% if posts %}
