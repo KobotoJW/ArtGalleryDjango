@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     posts.forEach(post => {
         let currentImgIndex = 0;
-        const images = post.querySelectorAll('img');
+        const images = post.querySelectorAll('a');
         const nextButton = post.querySelector('.next');
         const prevButton = post.querySelector('.prev');
 
@@ -58,4 +58,29 @@ document.addEventListener('DOMContentLoaded', function() {
             images[currentImgIndex].style.display = 'block';
         });
     });
+
+    function fetchPage(url) {
+        fetch(url, {
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('photo-container').innerHTML = data.html;
+            addPaginationEventListeners();
+        })
+        .catch(error => console.error('Error fetching the page:', error));
+    }
+
+    function addPaginationEventListeners() {
+        document.querySelectorAll('.pagination-link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                fetchPage(this.href);
+            });
+        });
+    }
+
+    addPaginationEventListeners();
 });

@@ -1,0 +1,20 @@
+<div class="sidebar-gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+        {% for galphoto in page_obj %}
+        <a href="{{ galphoto.image.url }}" target="_blank">
+            <img src="{{ galphoto.image.url }}" alt="Photo">
+        </a>
+        {% endfor %}
+    </div>
+    <div class="pagination">
+        {% if page_obj.has_previous %}
+            <a href="?page=1" class="pagination-link" data-page="1">First &laquo;</a>
+            <a href="?page={{ page_obj.previous_page_number }}" class="pagination-link" data-page="{{ page_obj.previous_page_number }}">Previous &laquo;</a>
+        {% endif %}
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}" class="pagination-link" data-page="{{ page_obj.next_page_number }}">Next &raquo;</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}" class="pagination-link" data-page="{{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+        {% endif %}
+    </div>
+</div>

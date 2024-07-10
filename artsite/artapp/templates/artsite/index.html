@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <link rel="stylesheet" href="{% static 'styles/index_style.css' %}">
     <script src="{% static 'scripts/index_script.js' %}"></script>
@@ -16,39 +16,55 @@
             <button type="submit">Search</button>
         </form>
         <div class="logo-container">
-            <img class="logo-img" src="../media/site_photos/Stronka-Roksi-7-3-2024.png" alt="Stronka Roksi">
+            <a href="{% url 'index' %}">
+                <img class="logo-img" src="../media/site_photos/Stronka-Roksi-7-3-2024.png" alt="Stronka Roksi">
+            </a>
         </div>
-            <div class="nav-links">
+        <div class="nav-links">
             <a href="/admin" class="button-admin">Admin</a>
         </div>
     </nav>
 
-    {% if posts %}
-        <div class="posts-container">
-            {% for post in posts %}
-                <div class="post">
-                    <h2>{{ post.title }}</h2>
-                    <p>{{ post.date_posted }}</p>
-                    
-                    <div class="post-content" id="content-{{ forloop.counter }}">
-                        <p>{{ post.content|linebreaks }}</p>
-                    </div>
-                    <a onclick="toggleContent('content-{{ forloop.counter }}')" class="read-more">↓ Read More ↓</a>
-                    
-                    <div class="post-photos">
-                        {% for photo in post.photos.all %}
-                            <img src="{{ photo.image.url }}" alt="Photo for post: {{ post.title }}">
-                        {% endfor %}
-                        <div>
-                            <button class="prev">Prev</button>
-                            <button class="next">Next</button>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
+    <div class="container">
+        <div class="sidebar">
+            <div id="photo-container">
+                {% include 'artsite/partials/photo_list.html' %}
+            </div>
         </div>
-    {% else %}
-        <p style = "color: white; font-size: 30px;">No posts are available.</p>
-    {% endif %}
+        
+        <div class="posts-container">
+            {% if posts %}
+                    {% for post in posts %}
+                        <div class="post">
+                            <h2>{{ post.title }}</h2>
+                            <p>{{ post.date_posted }}</p>
+                            
+                            <div class="post-content" id="content-{{ forloop.counter }}">
+                                <p>{{ post.content|linebreaks }}</p>
+                            </div>
+                            <a onclick="toggleContent('content-{{ forloop.counter }}')" class="read-more">↓ Read More ↓</a>
+                            
+                            <div class="post-photos">
+                                {% for photo in post.photos.all %}
+                                    <a href="{{ photo.image.url }}" target="_blank">
+                                        <img src="{{ photo.image.url }}" alt="Photo for post: {{ post.title }}">
+                                    </a>
+                                {% endfor %}
+                                <div>
+                                    <button class="prev">Prev</button>
+                                    <button class="next">Next</button>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+            {% else %}
+                <p>No posts are available.</p>
+            {% endif %}
+        </div>
+        
+        <div class="sidebar">
+        </div>
+    </div>
+
 </body>
 </html>
